@@ -9,13 +9,22 @@ export const contactsSlice = createSlice({
   reducers: {
     createContact(state, action) {
       state.items.push(action.payload);
+      localStorage.setItem('contacts', JSON.stringify(state.items));
     },
     deleteContact(state, action) {
       state.items = state.items.filter(item => item.id !== action.payload);
+      localStorage.setItem('contacts', JSON.stringify(state.items));
     },
     filterContact(state, action) {},
+    updateLocalStorage(state, action) {
+      state.items = action.payload;
+    },
   },
 });
 
-export const { createContact, deleteContact, filterContact } =
-  contactsSlice.actions;
+export const {
+  createContact,
+  deleteContact,
+  filterContact,
+  updateLocalStorage,
+} = contactsSlice.actions;
