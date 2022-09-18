@@ -4,11 +4,16 @@ import PropTypes from 'prop-types';
 
 export const ContactList = () => {
   const items = useSelector(state => state.contacts.items);
+  const filterValue = useSelector(state => state.contacts.filter);
   const dispatch = useDispatch();
+
+  const filteredContacts = items.filter(contact =>
+    contact.name.toLowerCase().includes(filterValue.toLowerCase())
+  );
 
   return (
     <ul>
-      {items.map(({ id, name, number }) => (
+      {filteredContacts.map(({ id, name, number }) => (
         <li key={id}>
           <p>
             {name}: {number}
@@ -29,5 +34,3 @@ ContactList.propTypes = {
     })
   ),
 };
-
-export default ContactList;

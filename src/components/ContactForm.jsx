@@ -20,7 +20,7 @@ export const ContactForm = () => {
   return (
     <form onSubmit={handleSubmit}>
       <input type="text" name="name" placeholder="Julie Samyliak" />
-      <input type="text" name="number" placeholder="+38-012-123-45-67" />
+      <input type="text" name="number" placeholder="+380121234567" />
       <button type="submit">Create</button>
     </form>
   );

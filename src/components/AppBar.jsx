@@ -2,7 +2,6 @@ import { Link } from 'react-router-dom';
 import { UserMenu } from './UserMenu';
 import { useSelector } from 'react-redux';
 
-
 export const AppBar = () => {
   const isLoggedIn = useSelector(state => state.user.isLoggedIn);
 
@@ -17,7 +16,7 @@ export const AppBar = () => {
       }}
     >
       <nav>
-        <Link to="/home" style={{ paddingRight: 10 }}>
+        <Link to="/" style={{ paddingRight: 10 }}>
           Home
         </Link>
         {!isLoggedIn && (

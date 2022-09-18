@@ -15,7 +15,9 @@ export const contactsSlice = createSlice({
       state.items = state.items.filter(item => item.id !== action.payload);
       localStorage.setItem('contacts', JSON.stringify(state.items));
     },
-    filterContact(state, action) {},
+    filterContact(state, action) {
+      state.filter = action.payload;
+    },
     updateLocalStorage(state, action) {
       state.items = action.payload;
     },
