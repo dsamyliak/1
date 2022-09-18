@@ -7,7 +7,6 @@ export const Filter = () => {
   const dispatch = useDispatch();
 
   const changeFilter = e => {
-    console.log(e.currentTarget.value);
     dispatch(filterContact(e.currentTarget.value));
   };
   return (
