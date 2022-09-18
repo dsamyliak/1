@@ -1,10 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-
 //createSlice itemsSlice
 export const itemsSlice = createSlice({
-  name: "itemsSlice",
-  initialState: ['text1', 'text2', 'text3',],
+  name: 'itemsSlice',
+  initialState: [],
   reducers: {
     add(state, action) {
       return state.push(action.payload);

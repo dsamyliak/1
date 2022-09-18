@@ -17,8 +17,8 @@ export const AppBar = () => {
       }}
     >
       <nav>
-        <Link to="/" style={{ paddingRight: 10 }}>
-          Main
+        <Link to="/home" style={{ paddingRight: 10 }}>
+          Home
         </Link>
         {!isLoggedIn && (
           <Link to="/login" style={{ paddingRight: 10 }}>
@@ -30,7 +30,9 @@ export const AppBar = () => {
             Dashboard
           </Link>
         )}
-        {/* <Link to="/" onClick={() => dispatch(logOut())}>Log Out</Link> */}
+        <Link to="/phonebook" style={{ paddingRight: 10 }}>
+          Phonebook
+        </Link>
       </nav>
       {isLoggedIn && <UserMenu />}
     </header>
