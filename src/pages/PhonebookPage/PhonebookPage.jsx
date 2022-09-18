@@ -1,10 +1,10 @@
-import { ContactForm } from 'components/ContactForm';
-import { ContactList } from 'components/ContactList';
-import { Filter } from 'components/Filter';
-
+import { ContactForm } from 'components/ContactForm/ContactForm';
+import { ContactList } from 'components/ContactList/ContactList';
+import { Filter } from 'components/Filter/Filter';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { updateLocalStorage } from 'redux/contactsSlice';
+import { Container, Header3 } from './PhonebookPage.styled';
 
 export const PhonebookPage = () => {
   const dispatch = useDispatch();
@@ -21,18 +21,18 @@ export const PhonebookPage = () => {
   }, [dispatch]);
 
   return (
-    <>
-      <div>
+    <Container>
+      <Container>
         <h1>Phonebook</h1>
-        <h2>Create contact</h2>
+        <Header3>Create contact</Header3>
         <ContactForm />
-      </div>
-      <div>
-        <h2>Find by name</h2>
+      </Container>
+      <Container>
+        <Header3>Find by name</Header3>
         <Filter />
-        <h2>Contacts</h2>
+        <Header3>Contacts</Header3>
         <ContactList />
-      </div>
-    </>
+      </Container>
+    </Container>
   );
 };

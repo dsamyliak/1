@@ -1,4 +1,4 @@
-import { AppBar } from './AppBar';
+import { AppBar } from '../AppBar/AppBar';
 import { Outlet } from 'react-router-dom';
 
 export const Layout = () => {

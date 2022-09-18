@@ -1,6 +1,7 @@
 import { nanoid } from '@reduxjs/toolkit';
 import { useDispatch } from 'react-redux';
 import { createContact } from 'redux/contactsSlice';
+import { FormContainer, InputForm, Button } from './ContactForm.styled';
 
 export const ContactForm = () => {
   const dispatch = useDispatch();
@@ -18,10 +19,10 @@ export const ContactForm = () => {
     form.reset();
   };
   return (
-    <form onSubmit={handleSubmit}>
-      <input type="text" name="name" placeholder="Julie Samyliak" />
-      <input type="text" name="number" placeholder="+380121234567" />
-      <button type="submit">Create</button>
-    </form>
+    <FormContainer onSubmit={handleSubmit}>
+      <InputForm type="text" name="name" placeholder="Julie Samyliak" />
+      <InputForm type="text" name="number" placeholder="+380121234567" />
+      <Button type="submit">Create</Button>
+    </FormContainer>
   );
 };

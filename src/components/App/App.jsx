@@ -1,4 +1,4 @@
-import { Layout } from './Layout';
+import { Layout } from '../Layout/Layout';
 import { LoginPage, DashboardPage, PhonebookPage, HomePage } from 'pages';
 import { Route, Routes, Navigate } from 'react-router-dom';
 

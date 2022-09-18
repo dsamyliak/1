@@ -1,6 +1,7 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { deleteContact } from 'redux/contactsSlice';
 import PropTypes from 'prop-types';
+import { FormContainer, Button, ListItem } from './ContactList.styled';
 
 export const ContactList = () => {
   const items = useSelector(state => state.contacts.items);
@@ -12,16 +13,16 @@ export const ContactList = () => {
   );
 
   return (
-    <ul>
-      {filteredContacts.map(({ id, name, number }) => (
-        <li key={id}>
-          <p>
+    <FormContainer>
+      <ul>
+        {filteredContacts.map(({ id, name, number }) => (
+          <ListItem key={id}>
             {name}: {number}
-          </p>
-          <button onClick={() => dispatch(deleteContact(id))}>Delete</button>
-        </li>
-      ))}
-    </ul>
+            <Button onClick={() => dispatch(deleteContact(id))}>Delete</Button>
+          </ListItem>
+        ))}
+      </ul>
+    </FormContainer>
   );
 };
 
